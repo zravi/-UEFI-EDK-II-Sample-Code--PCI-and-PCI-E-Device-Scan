@@ -1,0 +1,34 @@
+##
+ 
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = LsPciDev
+  FILE_GUID                      = 8cfdb267-ceed-4e72-b541-a44ce670c037
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+ 
+[Sources]  
+  LsPciDev.c
+  PciVenInfo.h
+  PciClassInfo.h
+   
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  StdLib/StdLib.dec
+  EdkCompatibilityPkg/EdkCompatibilityPkg.dec
+  IntelFrameworkPkg/IntelFrameworkPkg.dec
+  IntelFrameworkModulePkg/IntelFrameworkModulePkg.dec 
+   
+[LibraryClasses]
+  UefiBootServicesTableLib
+  UefiLib
+  UefiApplicationEntryPoint
+  PrintLib
+  DebugLib
+  ShellLib
+   
+[Protocols]
+  gEfiPciRootBridgeIoProtocolGuid #metohd 1
